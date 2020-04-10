@@ -1,15 +1,10 @@
 var tribonacci = function(n) {
-    if(n===0){
-        return 0;
-    }
-    else if(n===1){
-        return 1;
-    }
-    
-    else if(n===2){
-        return 1;
-    }
-    else if(n>2){return tribonacci(n-3)+tribonacci(n-2)+tribonacci(n-1)}
+  //somehow storing takes up less sapce and i don't understand
+  let trib = [0, 1, 1];
+  for (let i = 3; i <= n; i++) {
+    trib[i] = trib[i - 3] + trib[i - 2] + trib[i - 1];
+  }
+  return trib[n];
 };
 
 console.log(tribonacci(5));
